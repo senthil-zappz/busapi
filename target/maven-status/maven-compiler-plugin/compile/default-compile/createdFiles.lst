@@ -13,6 +13,7 @@ com/javaproject/busapi/Files/busServicesRepository.class
 com/javaproject/busapi/Files/busServices.class
 com/javaproject/busapi/Files/busServicesController.class
 com/javaproject/busapi/Service/busRoutesService.class
+com/javaproject/busapi/EnableWebSecurity.class
 com/javaproject/busapi/Files/busServicesNotFoundException.class
 com/javaproject/busapi/BusapiApplication.class
 com/javaproject/busapi/Files/busServices$busServicesBuilder.class

@@ -39,7 +39,7 @@ public class busRoutesController {
     public ResponseEntity<String> showHelp() {
         logger.error("Empty call to end point");
         return new ResponseEntity<>(
-                "Hi, welcome to busapi \r\n You can use the follwing endpoints to access busapi \r\n /busroutes/{serviceno}\r\n /busarrival/{busstopcode} \r\n /busarrival/{busstopcode}/{busservice}\r\n /busstops \r\n /busstops/{busstopcode}\t\n /busservices \r\n /busservices/{serviceno}",
+                "Hi, welcome to busapi \r\nYou can use the follwing endpoints to access busapi \r\n \r\n 1. /busroutes/{serviceno}\r\n     Get the routes of the serviceno \r\n \r\n 2. /busarrival/{busstopcode} \r\n     Get the next 3 buses arriving at this busstop \r\n\r\n 3. /busarrival/{busstopcode}/{busservice}\r\n     Get the next 3 buses of the service number arriving at this busstop. \r\n\r\n 4. /busstops \r\n     Get all busstops details \r\n \r\n 5. /busstops/{busstopcode}\r\n     Get the details of the busstop \r\n\r\n 6. /busservices \r\n     Get All the bus services details \r\n\r\n 7. /busservices/{serviceno} \r\n     Get the details of the service",
                 HttpStatus.BAD_REQUEST);
     }
 
