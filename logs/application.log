@@ -1,57 +1,49 @@
-2023-09-13 00:03:56.594  INFO 95321 --- [restartedMain] c.javaproject.busapi.BusapiApplication   : Starting BusapiApplication using Java 20.0.1 on Mac-Pro.local with PID 95321 (/Users/senthil/sctp-ntu/busapi/target/classes started by senthil in /Users/senthil/sctp-ntu/busapi)
-2023-09-13 00:03:56.595 DEBUG 95321 --- [restartedMain] c.javaproject.busapi.BusapiApplication   : Running with Spring Boot v2.7.15, Spring v5.3.29
-2023-09-13 00:03:56.595  INFO 95321 --- [restartedMain] c.javaproject.busapi.BusapiApplication   : No active profile set, falling back to 1 default profile: "default"
-2023-09-13 00:03:59.813  INFO 95321 --- [restartedMain] c.javaproject.busapi.BusapiApplication   : Started BusapiApplication in 3.869 seconds (JVM running for 4.531)
-2023-09-13 00:07:26.601  INFO 95735 --- [restartedMain] c.javaproject.busapi.BusapiApplication   : Starting BusapiApplication using Java 20.0.1 on Mac-Pro.local with PID 95735 (/Users/senthil/sctp-ntu/busapi/target/classes started by senthil in /Users/senthil/sctp-ntu/busapi)
-2023-09-13 00:07:26.602 DEBUG 95735 --- [restartedMain] c.javaproject.busapi.BusapiApplication   : Running with Spring Boot v2.7.15, Spring v5.3.29
-2023-09-13 00:07:26.603  INFO 95735 --- [restartedMain] c.javaproject.busapi.BusapiApplication   : No active profile set, falling back to 1 default profile: "default"
-2023-09-13 00:07:29.334  INFO 95735 --- [restartedMain] c.javaproject.busapi.BusapiApplication   : Started BusapiApplication in 3.307 seconds (JVM running for 3.885)
-2023-09-13 00:09:30.722  INFO 95874 --- [restartedMain] c.javaproject.busapi.BusapiApplication   : Starting BusapiApplication using Java 20.0.1 on Mac-Pro.local with PID 95874 (/Users/senthil/sctp-ntu/busapi/target/classes started by senthil in /Users/senthil/sctp-ntu/busapi)
-2023-09-13 00:09:30.723 DEBUG 95874 --- [restartedMain] c.javaproject.busapi.BusapiApplication   : Running with Spring Boot v2.7.15, Spring v5.3.29
-2023-09-13 00:09:30.724  INFO 95874 --- [restartedMain] c.javaproject.busapi.BusapiApplication   : No active profile set, falling back to 1 default profile: "default"
-2023-09-13 00:09:33.379  INFO 95874 --- [restartedMain] c.javaproject.busapi.BusapiApplication   : Started BusapiApplication in 3.425 seconds (JVM running for 3.859)
-2023-09-13 00:22:35.760  INFO 97014 --- [restartedMain] c.javaproject.busapi.BusapiApplication   : Starting BusapiApplication using Java 20.0.1 on Mac-Pro.local with PID 97014 (/Users/senthil/sctp-ntu/busapi/target/classes started by senthil in /Users/senthil/sctp-ntu/busapi)
-2023-09-13 00:22:35.761 DEBUG 97014 --- [restartedMain] c.javaproject.busapi.BusapiApplication   : Running with Spring Boot v2.7.15, Spring v5.3.29
-2023-09-13 00:22:35.762  INFO 97014 --- [restartedMain] c.javaproject.busapi.BusapiApplication   : No active profile set, falling back to 1 default profile: "default"
-2023-09-13 00:22:38.044 ERROR 97014 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Failed to initialize JPA EntityManagerFactory: No identifier specified for entity: com.javaproject.busapi.Entity.busArrivals
-2023-09-13 00:22:38.097 ERROR 97014 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
-
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is org.hibernate.AnnotationException: No identifier specified for entity: com.javaproject.busapi.Entity.busArrivals
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1804) ~[spring-beans-5.3.29.jar:5.3.29]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620) ~[spring-beans-5.3.29.jar:5.3.29]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.29.jar:5.3.29]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.29.jar:5.3.29]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.29.jar:5.3.29]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.29.jar:5.3.29]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.29.jar:5.3.29]
-	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1157) ~[spring-context-5.3.29.jar:5.3.29]
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:911) ~[spring-context-5.3.29.jar:5.3.29]
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.29.jar:5.3.29]
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147) ~[spring-boot-2.7.15.jar:2.7.15]
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:731) ~[spring-boot-2.7.15.jar:2.7.15]
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408) ~[spring-boot-2.7.15.jar:2.7.15]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307) ~[spring-boot-2.7.15.jar:2.7.15]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1303) ~[spring-boot-2.7.15.jar:2.7.15]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1292) ~[spring-boot-2.7.15.jar:2.7.15]
-	at com.javaproject.busapi.BusapiApplication.main(BusapiApplication.java:10) ~[classes/:na]
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:578) ~[na:na]
-	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-2.7.15.jar:2.7.15]
-Caused by: org.hibernate.AnnotationException: No identifier specified for entity: com.javaproject.busapi.Entity.busArrivals
-	at org.hibernate.cfg.InheritanceState.determineDefaultAccessType(InheritanceState.java:266) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
-	at org.hibernate.cfg.InheritanceState.getElementsToProcess(InheritanceState.java:211) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
-	at org.hibernate.cfg.AnnotationBinder.bindClass(AnnotationBinder.java:772) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
-	at org.hibernate.boot.model.source.internal.annotations.AnnotationMetadataSourceProcessorImpl.processEntityHierarchies(AnnotationMetadataSourceProcessorImpl.java:225) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
-	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess$1.processEntityHierarchies(MetadataBuildingProcess.java:239) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
-	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:282) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
-	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1460) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
-	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1494) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
-	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58) ~[spring-orm-5.3.29.jar:5.3.29]
-	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365) ~[spring-orm-5.3.29.jar:5.3.29]
-	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409) ~[spring-orm-5.3.29.jar:5.3.29]
-	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) ~[spring-orm-5.3.29.jar:5.3.29]
-	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341) ~[spring-orm-5.3.29.jar:5.3.29]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863) ~[spring-beans-5.3.29.jar:5.3.29]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800) ~[spring-beans-5.3.29.jar:5.3.29]
-	... 19 common frames omitted
-
+2023-09-22 11:38:26.162  INFO 4802 --- [restartedMain] c.javaproject.busapi.BusapiApplication   : Starting BusapiApplication using Java 20.0.1 on Mac-Pro.local with PID 4802 (/Users/senthil/sctp-ntu/busapi/target/classes started by senthil in /Users/senthil/sctp-ntu/busapi)
+2023-09-22 11:38:26.168 DEBUG 4802 --- [restartedMain] c.javaproject.busapi.BusapiApplication   : Running with Spring Boot v2.7.15, Spring v5.3.29
+2023-09-22 11:38:26.169  INFO 4802 --- [restartedMain] c.javaproject.busapi.BusapiApplication   : No active profile set, falling back to 1 default profile: "default"
+2023-09-22 11:38:29.714  INFO 4802 --- [restartedMain] c.javaproject.busapi.BusapiApplication   : Started BusapiApplication in 4.121 seconds (JVM running for 4.567)
+2023-09-22 11:38:46.716  INFO 4802 --- [http-nio-8088-exec-1] c.j.b.Controller.busRoutesController     : new call for busarrival (param busstop)
+2023-09-22 11:38:52.939  INFO 4802 --- [http-nio-8088-exec-3] c.j.b.Controller.busRoutesController     : new call for busarrival (param busstop, busservice)
+2023-09-22 11:39:04.550  INFO 4802 --- [http-nio-8088-exec-4] c.j.b.Controller.busRoutesController     : new call for busarrival (param busstop)
+2023-09-22 11:39:14.047  INFO 4802 --- [http-nio-8088-exec-5] c.j.b.Controller.busRoutesController     : new call for busarrival (param busstop, busservice)
+2023-09-22 11:41:22.328  INFO 5009 --- [restartedMain] c.javaproject.busapi.BusapiApplication   : Starting BusapiApplication using Java 20.0.1 on Mac-Pro.local with PID 5009 (/Users/senthil/sctp-ntu/busapi/target/classes started by senthil in /Users/senthil/sctp-ntu/busapi)
+2023-09-22 11:41:22.329 DEBUG 5009 --- [restartedMain] c.javaproject.busapi.BusapiApplication   : Running with Spring Boot v2.7.15, Spring v5.3.29
+2023-09-22 11:41:22.330  INFO 5009 --- [restartedMain] c.javaproject.busapi.BusapiApplication   : No active profile set, falling back to 1 default profile: "default"
+2023-09-22 11:41:25.766  INFO 5009 --- [restartedMain] c.javaproject.busapi.BusapiApplication   : Started BusapiApplication in 4.022 seconds (JVM running for 4.479)
+2023-09-22 11:42:37.826  INFO 5009 --- [http-nio-8088-exec-1] c.j.b.Controller.busRoutesController     : new call for busarrival (busstop : 11009 bus service : 100 )
+2023-09-22 12:27:47.104  INFO 8954 --- [restartedMain] c.javaproject.busapi.BusapiApplication   : Starting BusapiApplication using Java 20.0.1 on Mac-Pro.local with PID 8954 (/Users/senthil/sctp-ntu/busapi/target/classes started by senthil in /Users/senthil/sctp-ntu/busapi)
+2023-09-22 12:27:47.107 DEBUG 8954 --- [restartedMain] c.javaproject.busapi.BusapiApplication   : Running with Spring Boot v2.7.15, Spring v5.3.29
+2023-09-22 12:27:47.107  INFO 8954 --- [restartedMain] c.javaproject.busapi.BusapiApplication   : No active profile set, falling back to 1 default profile: "default"
+2023-09-22 12:27:50.528  INFO 8954 --- [restartedMain] c.javaproject.busapi.BusapiApplication   : Started BusapiApplication in 3.972 seconds (JVM running for 4.41)
+2023-09-22 12:28:03.111  INFO 8954 --- [http-nio-8088-exec-1] c.j.busapi.Controller.busstopController  : getAllBusStop
+2023-09-22 12:28:20.472  INFO 8954 --- [http-nio-8088-exec-3] c.j.busapi.Controller.busstopController  : getBusStop01012
+2023-09-22 12:29:23.132  INFO 9094 --- [restartedMain] c.javaproject.busapi.BusapiApplication   : Starting BusapiApplication using Java 20.0.1 on Mac-Pro.local with PID 9094 (/Users/senthil/sctp-ntu/busapi/target/classes started by senthil in /Users/senthil/sctp-ntu/busapi)
+2023-09-22 12:29:23.134 DEBUG 9094 --- [restartedMain] c.javaproject.busapi.BusapiApplication   : Running with Spring Boot v2.7.15, Spring v5.3.29
+2023-09-22 12:29:23.134  INFO 9094 --- [restartedMain] c.javaproject.busapi.BusapiApplication   : No active profile set, falling back to 1 default profile: "default"
+2023-09-22 12:29:26.659  INFO 9094 --- [restartedMain] c.javaproject.busapi.BusapiApplication   : Started BusapiApplication in 3.958 seconds (JVM running for 4.405)
+2023-09-22 12:31:11.536 ERROR 9094 --- [http-nio-8088-exec-2] c.j.b.Controller.busRoutesController     : Empty call to end point
+2023-09-22 12:31:50.304 ERROR 9094 --- [http-nio-8088-exec-4] c.j.b.Controller.busRoutesController     : Empty call to end point
+2023-09-22 12:32:02.757  INFO 9298 --- [restartedMain] c.javaproject.busapi.BusapiApplication   : Starting BusapiApplication using Java 20.0.1 on Mac-Pro.local with PID 9298 (/Users/senthil/sctp-ntu/busapi/target/classes started by senthil in /Users/senthil/sctp-ntu/busapi)
+2023-09-22 12:32:02.758 DEBUG 9298 --- [restartedMain] c.javaproject.busapi.BusapiApplication   : Running with Spring Boot v2.7.15, Spring v5.3.29
+2023-09-22 12:32:02.759  INFO 9298 --- [restartedMain] c.javaproject.busapi.BusapiApplication   : No active profile set, falling back to 1 default profile: "default"
+2023-09-22 12:32:06.178  INFO 9298 --- [restartedMain] c.javaproject.busapi.BusapiApplication   : Started BusapiApplication in 4.031 seconds (JVM running for 4.473)
+2023-09-22 12:32:13.169 ERROR 9298 --- [http-nio-8088-exec-2] c.j.b.Controller.busRoutesController     : Empty call to end point
+2023-09-22 13:06:37.660 ERROR 9298 --- [http-nio-8088-exec-4] c.j.b.Controller.busRoutesController     : Empty call to end point
+2023-09-22 13:06:54.974  INFO 9298 --- [http-nio-8088-exec-6] c.j.busapi.Controller.busstopController  : getAllBusStop
+2023-09-22 13:09:15.958  INFO 11526 --- [restartedMain] c.javaproject.busapi.BusapiApplication   : Starting BusapiApplication using Java 20.0.1 on Mac-Pro.local with PID 11526 (/Users/senthil/sctp-ntu/busapi/target/classes started by senthil in /Users/senthil/sctp-ntu/busapi)
+2023-09-22 13:09:15.959 DEBUG 11526 --- [restartedMain] c.javaproject.busapi.BusapiApplication   : Running with Spring Boot v2.7.15, Spring v5.3.29
+2023-09-22 13:09:15.960  INFO 11526 --- [restartedMain] c.javaproject.busapi.BusapiApplication   : No active profile set, falling back to 1 default profile: "default"
+2023-09-22 13:09:19.385  INFO 11526 --- [restartedMain] c.javaproject.busapi.BusapiApplication   : Started BusapiApplication in 4.02 seconds (JVM running for 4.548)
+2023-09-22 13:14:29.611  INFO 11862 --- [restartedMain] c.javaproject.busapi.BusapiApplication   : Starting BusapiApplication using Java 20.0.1 on Mac-Pro.local with PID 11862 (/Users/senthil/sctp-ntu/busapi/target/classes started by senthil in /Users/senthil/sctp-ntu/busapi)
+2023-09-22 13:14:29.612 DEBUG 11862 --- [restartedMain] c.javaproject.busapi.BusapiApplication   : Running with Spring Boot v2.7.15, Spring v5.3.29
+2023-09-22 13:14:29.613  INFO 11862 --- [restartedMain] c.javaproject.busapi.BusapiApplication   : No active profile set, falling back to 1 default profile: "default"
+2023-09-22 13:14:33.144  INFO 11862 --- [restartedMain] c.javaproject.busapi.BusapiApplication   : Started BusapiApplication in 4.14 seconds (JVM running for 4.591)
+2023-09-22 13:14:44.331 ERROR 11862 --- [http-nio-8088-exec-2] c.j.b.Controller.busRoutesController     : Empty call to end point
+2023-09-22 13:14:55.035  INFO 11862 --- [http-nio-8088-exec-4] c.j.busapi.Files.busServicesController   : getAllBusServices
+2023-09-22 13:15:04.188  INFO 11862 --- [http-nio-8088-exec-5] c.j.busapi.Files.busServicesController   : getBusService118
+2023-09-22 13:17:58.271  INFO 12109 --- [restartedMain] c.javaproject.busapi.BusapiApplication   : Starting BusapiApplication using Java 20.0.1 on Mac-Pro.local with PID 12109 (/Users/senthil/sctp-ntu/busapi/target/classes started by senthil in /Users/senthil/sctp-ntu/busapi)
+2023-09-22 13:17:58.272 DEBUG 12109 --- [restartedMain] c.javaproject.busapi.BusapiApplication   : Running with Spring Boot v2.7.15, Spring v5.3.29
+2023-09-22 13:17:58.273  INFO 12109 --- [restartedMain] c.javaproject.busapi.BusapiApplication   : No active profile set, falling back to 1 default profile: "default"
+2023-09-22 13:18:01.841  INFO 12109 --- [restartedMain] c.javaproject.busapi.BusapiApplication   : Started BusapiApplication in 4.013 seconds (JVM running for 4.47)
+2023-09-22 13:18:14.921 ERROR 12109 --- [http-nio-8088-exec-2] c.j.b.Controller.busRoutesController     : Empty call to end point
+2023-09-22 13:19:02.588  INFO 12109 --- [http-nio-8088-exec-4] c.j.busapi.Files.busServicesController   : getAllBusServices

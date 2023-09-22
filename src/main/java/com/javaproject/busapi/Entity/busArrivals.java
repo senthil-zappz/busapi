@@ -1,16 +1,22 @@
 package com.javaproject.busapi.Entity;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 import javax.persistence.Entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
-@Entity
 @Getter
 @Setter
+@AllArgsConstructor
+@NoArgsConstructor
 
 public class busArrivals {
+
+    public Map<String, List<String>> busArrivalList;
 
 }
