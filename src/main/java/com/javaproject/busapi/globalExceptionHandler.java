@@ -32,5 +32,7 @@ public class globalExceptionHandler {
         errorResponse errorResponse = new errorResponse("Something went wrong", LocalDateTime.now());
         return new ResponseEntity<>(errorResponse, HttpStatus.INTERNAL_SERVER_ERROR);
     }
-
+// END OF GENERAL EXCEPTION HANDLER
+    // This is to check the development brach updates
+    // added by senthil 21.10.2023
 }
