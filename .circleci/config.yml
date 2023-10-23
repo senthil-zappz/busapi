@@ -31,12 +31,3 @@ jobs:
     steps:
       - checkout
       - run: mvn test
-
-workflows:
-  build:
-    jobs:
-      - build
-
-  test:
-    jobs:
-      - test
