@@ -1,0 +1,16 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/openjdk:8-jdk
+      - image: circleci/postgres
+        environment:
+          POSTGRES_USER: postgres
+          POSTGRES_DB: postgres
+
+    working_directory: ~/setup
+    steps:
+      - checkout
+      - run: wget https://github.com/senthil-zappz/busapi/blob/main/busservices.sql
+      - run: sudo apt-get update && sudo apt-get install postgresql
+      - run: psql < ~/setup/busservices.sql
