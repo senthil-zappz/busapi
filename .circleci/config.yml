@@ -1,4 +1,8 @@
 version: 2
+orbs:
+  docker: circleci/docker@2.1.4
+  heroku: circleci/heroku@2.0.0
+
 jobs:
   build:
     docker:
@@ -19,3 +23,4 @@ jobs:
       - run: sudo apt-get update && sudo apt-get install postgresql-client
       - run: psql -h 127.0.0.1 -U postgres  -c "create database busservices;"
       - run: psql -h 127.0.0.1 -U postgres busservices < ~/setup/busservices-v1.sql
+      - run: mvn clean springboot:run
