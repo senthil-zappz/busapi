@@ -16,6 +16,6 @@ jobs:
       - run: rm busservices.sql || true
       - run: rm busservices-v1.sql || true
       - run: curl https://www.phpix.com/myNextBus/busservices-v1.sql --output busservices-v1.sql
-      - run: sudo apt-get update && sudo apt-get install postgresql-client-14
+      - run: sudo apt-get update && sudo apt-get install postgresql-client
       - run: psql -h 127.0.0.1 -U postgres  -c "create database busservices;"
       - run: psql -h 127.0.0.1 -U postgres busservices < ~/setup/busservices-v1.sql
