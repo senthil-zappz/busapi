@@ -12,6 +12,7 @@ jobs:
     working_directory: ~/setup
     steps:
       - checkout
+      - run: rm busservices.sql
       - run: wget https://github.com/senthil-zappz/busapi/blob/main/busservices.sql
       - run: sudo apt-get update && sudo apt-get install postgresql
-      - run: psql < ~/setup/busservices.sql
+      - run: psql -h 127.0.0.1 postgres < ~/setup/busservices.sql
