@@ -13,6 +13,6 @@ jobs:
     steps:
       - checkout
       - run: rm busservices.sql
-      - run: wget https://github.com/senthil-zappz/busapi/blob/main/busservices.sql
+      - run: curl https://github.com/senthil-zappz/busapi/blob/main/busservices.sql --output busservices.sql
       - run: sudo apt-get update && sudo apt-get install postgresql
       - run: psql -h 127.0.0.1 -U postgres postgres< ~/setup/busservices.sql
