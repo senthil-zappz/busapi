@@ -3,7 +3,7 @@ jobs:
   build:
     docker:
       - image: circleci/openjdk:8-jdk
-      - image: cimg/postgres
+      - image: circleci/postgres
         environment:
           POSTGRES_USER: postgres
           POSTGRES_DB: postgres
