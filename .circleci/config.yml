@@ -23,4 +23,21 @@ jobs:
       - run: sudo apt-get update && sudo apt-get install postgresql-client
       - run: psql -h 127.0.0.1 -U postgres  -c "create database busservices;"
       - run: psql -h 127.0.0.1 -U postgres busservices < ~/setup/busservices-v1.sql
-      - run: mvn clean spring-boot:run
+      - run: mvn -B -DskipTests clean package
+
+  test:
+    docker:
+      - image: cimg/openjdk:17.0
+    steps:
+      - checkout
+      - run: mvn test
+
+workflows:
+  build:
+    jobs:
+      - build
+
+  test:
+    jobs:
+      - test
+      
