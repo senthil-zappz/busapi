@@ -6,7 +6,7 @@ orbs:
 jobs:
   build:
     docker:
-      - image: cimg/openjdk:17
+      - image: maven:3.8.3-openjdk-17
       - image: circleci/postgres
         restart: always
         environment:
