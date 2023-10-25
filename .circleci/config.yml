@@ -32,10 +32,8 @@ jobs:
             POSTGRES_USER: postgres
             POSTGRES_DB: postgres
             POSTGRES_PASSWORD:
-
-    steps:
-      - checkout
-      working_directory: ~/setup
+    
+    working_directory: ~/setup
     steps:
       - checkout
       - run: rm busservices.sql || true
