@@ -8,7 +8,6 @@ jobs:
     docker:
         - image: cimg/openjdk:17.0
         - image: circleci/postgres
-          restart: always
           environment:
             POSTGRES_USER: postgres
             POSTGRES_DB: postgres
