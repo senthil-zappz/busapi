@@ -3,7 +3,6 @@ orbs:
   node: circleci/node@5.0.1
   docker: circleci/docker@2.1.4
   heroku: circleci/heroku@2.0.0
-  snyk: snyk/snyk@0.0.10
 jobs:
   build:
       - image: cimg/openjdk:17.0
@@ -14,7 +13,7 @@ jobs:
           POSTGRES_DB: postgres
           POSTGRES_PASSWORD:
 
-    working_directory: ~/setup
+        working_directory: ~/setup
     steps:
       - checkout
       - run: rm busservices.sql || true
@@ -68,3 +67,5 @@ workflows:
       - deploy:
           requires:
             - build-and-push
+
+
