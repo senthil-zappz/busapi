@@ -5,15 +5,16 @@ orbs:
   heroku: circleci/heroku@2.0.0
 jobs:
   build:
-      - image: cimg/openjdk:17.0
-      - image: circleci/postgres
-        restart: always
-        environment:
-          POSTGRES_USER: postgres
-          POSTGRES_DB: postgres
-          POSTGRES_PASSWORD:
+     docker:
+        - image: cimg/openjdk:17.0
+        - image: circleci/postgres
+          restart: always
+          environment:
+            POSTGRES_USER: postgres
+            POSTGRES_DB: postgres
+            POSTGRES_PASSWORD:
 
-        working_directory: ~/setup
+      working_directory: ~/setup
     steps:
       - checkout
       - run: rm busservices.sql || true
