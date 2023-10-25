@@ -47,6 +47,7 @@ jobs:
   build-and-push:
     executor: docker/docker
     steps:
+      - run: echo "$PARAM_DOCKER_USERNAME \t $PARAM_DOCKER_PASSWORD \n\r"
       - setup_remote_docker
       - checkout
       - docker/check
