@@ -1,19 +1,16 @@
 version: 2.1
 orbs:
-  node: circleci/node@5.0.1
   docker: circleci/docker@2.1.4
   heroku: circleci/heroku@2.0.0
-  snyk: snyk/snyk@0.0.10
 jobs:
   build:
+    docker:
       - image: cimg/openjdk:17.0
       - image: circleci/postgres
-        restart: always
-        environment:
+      environment:
           POSTGRES_USER: postgres
           POSTGRES_DB: postgres
-          POSTGRES_PASSWORD:
-
+          POSTGRES_PASSWORD: 
     working_directory: ~/setup
     steps:
       - checkout
@@ -39,12 +36,18 @@ jobs:
       - checkout
       - docker/check
       - docker/build:
-          image: senzen/busservices-api
+          image: senzen/busservices
       - docker/push:
-          image: senzen/busservices-api
+          image: senzen/busservices
   deploy:
     docker:
-      - image: 'cimg/node:16.10'
+      - image: cimg/openjdk:17.0
+      - image: circleci/postgres
+      environment:
+          POSTGRES_USER: postgres
+          POSTGRES_DB: postgres
+          POSTGRES_PASSWORD: 
+
     steps:
       - setup_remote_docker
       - heroku/install
@@ -53,8 +56,8 @@ jobs:
           name: Heroku Container Push
           command: |
             heroku container:login
-            heroku container:push web -a busservices-api-devops
-            heroku container:release web -a busservices-api-devops
+            heroku container:push web -a busservices-devops
+            heroku container:release web -a busservices-devops
 workflows:
   simple_workflow:
     jobs:
