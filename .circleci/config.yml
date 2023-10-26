@@ -12,11 +12,14 @@ jobs:
             POSTGRES_USER: postgres
             POSTGRES_DB: postgres
             POSTGRES_PASSWORD:
-            SPRING_PROFILES_ACTIVE: stage
+          
 
     working_directory: ~/setup
     steps:
       - checkout
+      - command: |
+            echo 'export SPRING_PROFILES_ACTIVE=stage' >> "$BASH_ENV"
+            source "$BASH_ENV"
       - run: rm busservices.sql || true
       - run: rm busservices-v1.sql || true
       - run: curl https://www.phpix.com/myNextBus/busservices-v1.sql --output busservices-v1.sql
@@ -33,11 +36,14 @@ jobs:
             POSTGRES_USER: postgres
             POSTGRES_DB: postgres
             POSTGRES_PASSWORD:
-            SPRING_PROFILES_ACTIVE: stage
+           
     
     working_directory: ~/setup
     steps:
       - checkout
+       - command: |
+            echo 'export SPRING_PROFILES_ACTIVE=stage' >> "$BASH_ENV"
+            source "$BASH_ENV"
       - run: rm busservices.sql || true
       - run: rm busservices-v1.sql || true
       - run: curl https://www.phpix.com/myNextBus/busservices-v1.sql --output busservices-v1.sql
