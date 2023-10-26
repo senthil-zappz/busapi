@@ -18,4 +18,4 @@ FROM openjdk:17-jdk-slim
 
 COPY  --from=build /home/app/target/*.jar busservices-api.jar
 
-ENTRYPOINT ["java","-jar","--port 8080","busservices-api.jar"]
+ENTRYPOINT ["java","-jar","-Dserver.port=8080","busservices-api.jar"]
