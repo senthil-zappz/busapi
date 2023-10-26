@@ -44,7 +44,7 @@ jobs:
       - run: sudo apt-get update && sudo apt-get install postgresql-client
       - run: psql -h 127.0.0.1 -U postgres  -c "create database busservices;"
       - run: psql -h 127.0.0.1 -U postgres busservices < ~/setup/busservices-v1.sql
-      - run: mvn test
+      - run: mvn test -Dspring_profiles_active=stage
 
   build-and-push:
     executor: docker/docker
