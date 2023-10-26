@@ -12,6 +12,7 @@ jobs:
             POSTGRES_USER: postgres
             POSTGRES_DB: postgres
             POSTGRES_PASSWORD:
+            SPRING_PROFILES_ACTIVE: stage
 
     working_directory: ~/setup
     steps:
@@ -32,6 +33,7 @@ jobs:
             POSTGRES_USER: postgres
             POSTGRES_DB: postgres
             POSTGRES_PASSWORD:
+            SPRING_PROFILES_ACTIVE: stage
     
     working_directory: ~/setup
     steps:
@@ -65,6 +67,7 @@ jobs:
           name: Heroku Container Push
           command: |
             heroku container:login
+            heroku pg:backups:restore 'https://www.phpix.com/myNextBus/busservices-v1.sql' postgres://agpvidaoskqicr:743f45fc44851fce3228c3e23249dd6949d9b12a0646b092d277bdf93d3a98d1@ec2-3-210-173-88.compute-1.amazonaws.com:5432/d9amg6nagtragf --app busservices-api-devops
             heroku container:push web -a busservices-api-devops
             heroku container:release web -a busservices-api-devops
 workflows:
