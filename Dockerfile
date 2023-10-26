@@ -1,8 +1,21 @@
+#
+# Build stage
+#
+
+FROM maven:3.6.3-openjdk-17 AS build
+
+COPY src /home/app/src
+
+COPY pom.xml /home/app
+
+RUN mvn -B -DskipTests -f /home/app/pom.xml clean package
+
+#
+# Package stage
+#
+
 FROM openjdk:17-jdk-slim
 
-WORKDIR /app
-
-COPY target/busapi-0.0.1-SNAPSHOT.jar busservices-api.jar
+COPY  --from=build /home/app/target/*.jar busservices-api.jar
 
 ENTRYPOINT ["java","-jar","busservices-api.jar"]
-
