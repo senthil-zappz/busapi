@@ -33,7 +33,7 @@ jobs:
       - snyk/install  
       - snyk/scan:
           fail-on-issues: false
-          monitor-on-build: true
+          monitor-on-build: false
           severity-threshold: high
           token-variable: SNYK_TOKEN
 
