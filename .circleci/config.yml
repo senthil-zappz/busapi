@@ -29,13 +29,12 @@ jobs:
       - run: psql -h 127.0.0.1 -U postgres  -c "create database busservices;"
       - run: psql -h 127.0.0.1 -U postgres busservices < ~/setup/busservices-v1.sql
       - run: mvn -B -DskipTests clean package
-      - snyk/install
-      - run:
-          command: snyk version
-          name: Which version of snyk is installed
-      - run:
-          command: snyk code test
-          name: Run code scan
+      - snyk/install  
+      - snyk/scan:
+          fail-on-issues: false
+          monitor-on-build: true
+          severity-threshold: high
+          token-variable: SNYK_TOKEN
 
   test:
     docker:
