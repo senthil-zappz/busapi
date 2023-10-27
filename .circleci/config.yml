@@ -4,8 +4,6 @@ orbs:
   docker: circleci/docker@2.4.0
   heroku: circleci/heroku@2.0.0
   snyk: snyk/snyk@2.0.1
-  maven: circleci/maven@1.4.1
-
 jobs:
   build:
     docker:
@@ -30,7 +28,6 @@ jobs:
       - run: psql -h 127.0.0.1 -U postgres  -c "create database busservices;"
       - run: psql -h 127.0.0.1 -U postgres busservices < ~/setup/busservices-v1.sql
       - run: mvn -B -DskipTests clean package
-      - snyk/install  
       - snyk/scan:
           fail-on-issues: false
           monitor-on-build: false
