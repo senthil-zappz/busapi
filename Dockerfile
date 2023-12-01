@@ -1,9 +1,10 @@
 #
 # Build stage
 #
-WORKDIR /devopsdemo
 
 FROM maven:3.6.3-openjdk-17 AS build
+
+WORKDIR /devopsdemo
 
 COPY src /home/app/src
 
